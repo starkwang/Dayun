@@ -15,7 +15,7 @@
         html{
             height: 100%;
             width: 100%;
-            background:url("./img/bg.jpg");
+            background:black;
             background-position: center;
         }
         span.flip-clock-label{
@@ -32,7 +32,8 @@
         <div style="height: 100%;width: 100%;background-color: rgba(0,0,0,0.6);">
             <div class="content" style="position: absolute;top: 20%;">
                 <p style="color:#fff;font-size: 40px;text-align: center;" class="font">&nbsp;&nbsp;Stark <span style="color:#fc717b" class="font">♡</span> Sherry</p>
-                <p style="color:#fc717b;font-size: 30px;font-weight:900;text-align: center;" id="day" class="font"></p>
+                <p style="color:#fff;font-size: 30px;font-weight:900;text-align: center;">2015.06.17 - 2016.11.04</p>
+                <p style="color:#fff;font-size: 30px;font-weight:900;text-align: center;" id="day" class="font"></p>
                 <div class="your-clock"></div>
             </div>
         </div>
@@ -43,9 +44,11 @@
 
     <script type="text/javascript">
         var clock = $('.your-clock').FlipClock({
-        // ... your options here
+            // ... your options here
+            autoStart: false
         });
-        var now = parseInt(new Date().getTime()/1000);
+        //var now = parseInt(new Date().getTime()/1000);
+        var now = parseInt(Date.parse("Nov 03, 2016 09:44:00")/1000);
         var start = parseInt(Date.parse("Jun 18, 2015 22:58:00")/1000);
         var day = parseInt((now - start) / (3600*24));
         $('#day').html(day + " DAYS");
