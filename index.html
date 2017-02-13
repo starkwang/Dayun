@@ -9,13 +9,10 @@
             padding: 0;
             margin: 0;
         }
-        /*html{
-            background-color: #000;
-        }*/
         html{
             height: 100%;
             width: 100%;
-            background:black;
+            background: url('http://img.blog.csdn.net/20170213114240716');
             background-position: center;
         }
         span.flip-clock-label{
@@ -29,10 +26,10 @@
         }
     </style><meta name="viewport" content="width=484">
     <body>
-        <div style="height: 100%;width: 100%;background-color: rgba(0,0,0,0.6);">
+        <div style="height: 100%;width: 100%;background-color: rgba(0,0,0,0.3);">
             <div class="content" style="position: absolute;top: 20%;">
-                <p style="color:#fff;font-size: 40px;text-align: center;" class="font">&nbsp;&nbsp;Stark <span style="color:#fc717b" class="font">♡</span> Sherry</p>
-                <p style="color:#fff;font-size: 30px;font-weight:900;text-align: center;">2015.06.17 - 2016.11.04</p>
+                <p style="color:#fff;font-size: 40px;text-align: center;" class="font">&nbsp;&nbsp;Stark <span style="color:#fc717b" class="font">♡</span> Dayun</p>
+                <p style="color:#fff;font-size: 30px;font-weight:900;text-align: center;">2017.02.12 - Now</p>
                 <p style="color:#fff;font-size: 30px;font-weight:900;text-align: center;" id="day" class="font"></p>
                 <div class="your-clock"></div>
             </div>
@@ -45,13 +42,12 @@
     <script type="text/javascript">
         var clock = $('.your-clock').FlipClock({
             // ... your options here
-            autoStart: false
+            autoStart: true
         });
-        //var now = parseInt(new Date().getTime()/1000);
-        var now = parseInt(Date.parse("Nov 03, 2016 09:44:00")/1000);
-        var start = parseInt(Date.parse("Jun 18, 2015 22:58:00")/1000);
+        var now = parseInt(new Date().getTime()/1000);
+        var start = parseInt(Date.parse("Feb 12, 2017 22:30:00")/1000);
         var day = parseInt((now - start) / (3600*24));
-        $('#day').html(day + " DAYS");
+        $('#day').html(day + (day > 1 ? " DAYS" : " DAY"));
         clock.setTime((now - start) % (3600*24));
     </script>
 </html>
